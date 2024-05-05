@@ -1,0 +1,11 @@
+{
+    "name": "SystemClients",
+    "alias": "systemclients",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\SystemClients\\App\\Providers\\SystemClientsServiceProvider"
+    ],
+    "files": []
+}

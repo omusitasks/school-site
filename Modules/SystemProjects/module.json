@@ -1,0 +1,11 @@
+{
+    "name": "SystemProjects",
+    "alias": "systemprojects",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\SystemProjects\\App\\Providers\\SystemProjectsServiceProvider"
+    ],
+    "files": []
+}

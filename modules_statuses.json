@@ -1,0 +1,9 @@
+{
+    "SystemBlog": true,
+    "SystemProjects": true,
+    "SystemCourses": true,
+    "SystemTutors": true,
+    "SystemStudents": true,
+    "SystemClients": true,
+    "SystemSubscriptions": true
+}
