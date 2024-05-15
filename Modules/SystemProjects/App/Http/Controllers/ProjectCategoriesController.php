@@ -2,14 +2,15 @@
 
 namespace Modules\SystemProjects\App\Http\Controllers;
 
-use Modules\SystemProjects\app\Http\Controllers\BaseController as BaseController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon; // Import the Carbon library
 
-class ProjectCategoriesController extends BaseController
+class ProjectCategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +19,7 @@ class ProjectCategoriesController extends BaseController
     {
         $project_categories = DB::table('par_project_categories')->latest()->get();
 
-        return view('dashbord.ProjectModule.ProjectCategories.index', compact('project_categories'));
+        return view('dashbord.ProjectModule.projectcategories.index', compact('project_categories'));
     }
 
     /**
@@ -40,7 +41,7 @@ class ProjectCategoriesController extends BaseController
         $createdDate = Carbon::parse($project_categories->created_at);
         $duration = $createdDate->diffForHumans(); // This will give the duration in human-readable format (e.g., "2 days ago", "3 months ago")
 
-        return view('dashbord.ProjectModule.ProjectCategories.show', compact('project_categories', 'duration'));
+        return view('dashbord.ProjectModule.projectcategories.show', compact('project_categories', 'duration'));
     }
 
     /**
@@ -48,7 +49,7 @@ class ProjectCategoriesController extends BaseController
      */
     public function create()
     {
-        return view('dashbord.ProjectModule.ProjectCategories.create');
+        return view('dashbord.ProjectModule.projectcategories.create');
     }
 
     /**
@@ -82,7 +83,7 @@ class ProjectCategoriesController extends BaseController
             abort(404);
         }
 
-        return view('dashbord.ProjectModule.ProjectCategories.edit', compact('project_categories'));
+        return view('dashbord.ProjectModule.projectcategories.edit', compact('project_categories'));
     }
 
     /**

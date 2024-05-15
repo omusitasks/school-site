@@ -1,16 +1,18 @@
 <?php
 
-namespace Modules\SystemCourses\app\Http\Controllers;
+namespace Modules\SystemCourses\App\Http\Controllers;
 
-use Modules\SystemCourses\app\Http\Controllers\BaseController as BaseController;
-
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon; // Import the Carbon library for time
 use App\Models\User; // for count
 use Illuminate\Support\Facades\Storage; // for file system image storage uploads
 
-class CourseCategoriesController extends BaseController
+class CourseCategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.

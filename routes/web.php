@@ -17,15 +17,15 @@
     use Modules\SystemBlog\App\Http\Controllers\TagsController as TagsController;
 
     // COURSE MODULE
-    use Modules\systemCourses\App\Http\Controllers\CourseController;
-    use Modules\systemCourses\App\Http\Controllers\CourseCategoriesController;
-    use Modules\systemCourses\App\Http\Controllers\CourseTypeController;
+    use Modules\SystemCourses\App\Http\Controllers\CourseController;
+    use Modules\SystemCourses\App\Http\Controllers\CourseCategoriesController;
+    use Modules\SystemCourses\App\Http\Controllers\CourseTypeController;
 
     // PROJECT MODULE
-    use Modules\systemProjects\App\Http\Controllers\ProjectController;
-    use Modules\systemProjects\App\Http\Controllers\ProjectCategoriesController;
-    use Modules\systemProjects\App\Http\Controllers\ProjectTypeController;
-    use Modules\systemProjects\App\Http\Controllers\ProjectStatusController;
+    use Modules\SystemProjects\App\Http\Controllers\ProjectController;
+    use Modules\SystemProjects\App\Http\Controllers\ProjectCategoriesController;
+    use Modules\SystemProjects\App\Http\Controllers\ProjectTypeController;
+    use Modules\SystemProjects\App\Http\Controllers\ProjectStatusController;
 
     // MAIN DASHBOARD
     use App\Http\Controllers\Dashbord\MainDashboardController;

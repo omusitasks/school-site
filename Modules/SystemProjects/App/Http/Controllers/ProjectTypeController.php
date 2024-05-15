@@ -2,14 +2,16 @@
 
 namespace Modules\SystemProjects\App\Http\Controllers;
 
-use Modules\SystemProjects\app\Http\Controllers\BaseController as BaseController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon; // Import the Carbon library
 
-class ProjectTypeController extends BaseController
+
+class ProjectTypeController extends Controller
 {
     /**
      * Display a listing of the resource.

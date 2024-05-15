@@ -9,4 +9,14 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
+    public function returnMessage($message, $type)
+    {
+        $notification = [
+            'message' => $message,
+            'alert-type' => $type,
+        ];
+
+        return redirect()->back()->with($notification);
+    }
 }

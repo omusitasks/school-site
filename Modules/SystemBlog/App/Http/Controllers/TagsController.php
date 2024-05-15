@@ -1,17 +1,17 @@
 <?php
 
-namespace Modules\SystemBlog\app\Http\Controllers;
-// namespace App\Http\Controllers\Dashbord;
+namespace Modules\SystemBlog\App\Http\Controllers;
 
-// use App\Http\Controllers\Dashboard\BaseController as BaseController;
-use Modules\SystemBlog\app\Http\Controllers\BaseController as BaseController;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View; // Import View facade
 use Carbon\Carbon; // Import the Carbon library
 
 
-class TagsController extends BaseController
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.

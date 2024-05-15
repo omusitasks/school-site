@@ -2,16 +2,16 @@
 
 namespace Modules\SystemProjects\App\Http\Controllers;
 
-use Modules\SystemProjects\app\Http\Controllers\BaseController as BaseController;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon; // Import the Carbon library
 
-class ProjectController extends BaseController
+class ProjectController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      */
@@ -25,7 +25,7 @@ class ProjectController extends BaseController
                         ->latest()
                         ->get();
 
-        return view('dashbord.ProjectModule.Projects.index', compact('projects'));
+        return view('dashbord.ProjectModule.projects.index', compact('projects'));
     }
 
     /**
@@ -50,7 +50,7 @@ class ProjectController extends BaseController
         $createdDate = Carbon::parse($project->created_at);
         $duration = $createdDate->diffForHumans(); // This will give the duration in human-readable format (e.g., "2 days ago", "3 months ago")
 
-        return view('dashbord.ProjectModule.Projects.show', compact('project', 'duration'));
+        return view('dashbord.ProjectModule.projects.show', compact('project', 'duration'));
     }
 
     /**
@@ -61,7 +61,7 @@ class ProjectController extends BaseController
         $project_categories = DB::table('par_project_categories')->get();
         $project_status = DB::table('par_project_status')->get();
         $project_types = DB::table('par_project_types')->get();
-        return view('dashbord.ProjectModule.Projects.create', compact('project_categories', 'project_status', 'project_types'));
+        return view('dashbord.ProjectModule.projects.create', compact('project_categories', 'project_status', 'project_types'));
     }
 
     /**
@@ -102,7 +102,7 @@ class ProjectController extends BaseController
         $projectCategories = DB::table('par_project_categories')->get();
         $projectStatuses = DB::table('par_project_status')->get();
 
-        return view('dashbord.ProjectModule.Projects.edit', compact('project', 'projectCategories', 'projectStatuses'));
+        return view('dashbord.ProjectModule.projects.edit', compact('project', 'projectCategories', 'projectStatuses'));
     }
 
     /**

@@ -1,14 +1,17 @@
 <?php
 
-namespace Modules\SystemBlog\app\Http\Controllers;
+namespace Modules\SystemBlog\App\Http\Controllers;
 
-use Modules\SystemBlog\app\Http\Controllers\BaseController as BaseController;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 use Carbon\Carbon; // Import the Carbon library
 
-class BlogCategoriesController extends BaseController
+class BlogCategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +20,7 @@ class BlogCategoriesController extends BaseController
     {
         $blog_categories = DB::table('par_blog_categories')->latest()->get();
 
-        return view('dashbord.BlogModule.BlogCategory.index', compact('blog_categories'));
+        return view('dashbord.BlogModule.blogcategory.index', compact('blog_categories'));
     }
 
     /**
@@ -39,7 +42,7 @@ class BlogCategoriesController extends BaseController
     $createdDate = Carbon::parse($blog_categories->created_at);
     $duration = $createdDate->diffForHumans(); // This will give the duration in human-readable format (e.g., "2 days ago", "3 months ago")
 
-    return view('dashbord.BlogModule.BlogCategory.show', compact('blog_categories', 'duration'));
+    return view('dashbord.BlogModule.blogcategory.show', compact('blog_categories', 'duration'));
     }
 
 
@@ -48,7 +51,7 @@ class BlogCategoriesController extends BaseController
      */
     public function create()
     {
-        return view('dashbord.BlogModule.BlogCategory.create');
+        return view('dashbord.BlogModule.blogcategory.create');
     }
 
     /**
@@ -84,7 +87,7 @@ class BlogCategoriesController extends BaseController
             abort(404);
         }
 
-        return view('dashbord.BlogModule.BlogCategory.edit', compact('blog_categories'));
+        return view('dashbord.BlogModule.blogcategory.edit', compact('blog_categories'));
     }
 
     /**
